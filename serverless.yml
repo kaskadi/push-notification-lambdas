@@ -16,26 +16,14 @@ provider:
   region: eu-central-1
   deploymentBucket:
     name: kaskadi-serverless-deployment-bucket
-  # update this section to use proper tags for your lambda and stack
   stackTags: 
-    app: your-app-name
+    app: kaskadi
   tags:
-    app: your-app-name
+    app: kaskadi
     service: ${self:service.name}
-    logical-unit: api-logical-unit
-    type: 's3, sns, etc.'
-
+    logical-unit: push
+    type: eventBridge
 functions:
-  PushNotifications:
-    handler: push-notification-lambdas.handler
-    name: ${self:service.name}
-    package:
-      include:
-        - 'push-notification-lambdas.js'
-        - 'node_modules/**'
-    # configure here the proper event(s) that should trigger your lambda
-    events:
-      - http:
-          method: get
-          path: hello
-          cors: true
+  StocksNotif: ${file(./lambdas/stocks-notif/serverless.yml)}
+layers:
+  Layer: ${file(./layer/serverless.yml)}
