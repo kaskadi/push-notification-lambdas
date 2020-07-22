@@ -1,6 +1,4 @@
-const getSubs = require('./helpers/get-subs.js')
-const getKeys = require('./helpers/get-keys.js')
-const sendNotifications = require('./helpers/send-notifications.js')
+const { getSubs, getKeys, sendNotifications } = require('utils')
 
 module.exports.handler = async (event) => {
   return await Promise.all([getSubs(), getKeys()])
