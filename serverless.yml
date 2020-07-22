@@ -1,5 +1,3 @@
-# ATTENTION: when done with setting up this file, you can go into .github/workflows/deploy.yml to use the 'deploy -v' command for this action in order to deploy your lambda
-
 service:
   name: push-notification-lambdas
 
@@ -23,7 +21,9 @@ provider:
     service: ${self:service.name}
     logical-unit: push
     type: eventBridge
+
 functions:
   StocksNotif: ${file(./lambdas/stocks-notif/serverless.yml)}
+  
 layers:
   Layer: ${file(./layer/serverless.yml)}
