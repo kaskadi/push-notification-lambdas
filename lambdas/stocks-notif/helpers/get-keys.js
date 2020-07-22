@@ -16,5 +16,5 @@ module.exports = () => {
         }
       }
     }
-  }).then(res => res.body.hits.hits[0])
+  }).then(res => res.body.hits.hits[0]._source)
 }
