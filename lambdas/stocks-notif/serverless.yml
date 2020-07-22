@@ -5,4 +5,5 @@ layers:
 package:
   include:
     - lambdas/stocks-notif/stocks-notif.js
+    - lambdas/stocks-notif/helpers/**
 # TODO: add EventBridge as source when the event bus will be properly configured
