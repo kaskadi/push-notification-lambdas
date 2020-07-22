@@ -21,9 +21,15 @@ provider:
     service: ${self:service.name}
     logical-unit: push
     type: eventBridge
+  environment:
+    ES_ID: ${env:ES_ID}
+    ES_SECRET: ${env:ES_SECRET}
+    ES_ENDPOINT: ${env:ES_ENDPOINT}
+    PUSH_NOTIF_PUBLIC_KEY: ${env:PUSH_NOTIF_PUBLIC_KEY}
+    PUSH_NOTIF_PRIVATE_KEY: ${env:PUSH_NOTIF_PRIVATE_KEY}
 
 functions:
   StocksNotif: ${file(./lambdas/stocks-notif/serverless.yml)}
-  
+
 layers:
   Layer: ${file(./layer/serverless.yml)}
