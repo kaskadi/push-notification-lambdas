@@ -27,5 +27,3 @@ jobs:
         ES_ID: ${{ secrets.ES_ID }}
         ES_SECRET: ${{ secrets.ES_SECRET }}
         ES_ENDPOINT: ${{ secrets.ES_ENDPOINT }}
-        PUSH_NOTIF_PUBLIC_KEY: ${{ secrets.PUSH_NOTIF_PUBLIC_KEY }}
-        PUSH_NOTIF_PRIVATE_KEY: ${{ secrets.PUSH_NOTIF_PRIVATE_KEY }}
