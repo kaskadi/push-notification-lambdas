@@ -1,5 +1,5 @@
 module.exports = {
   getKeys: require('./get-keys.js'),
-  getSubs: require('./get-subs.js'),
+  getUsers: require('./get-users.js'),
   sendNotifications: require('./send-notifications.js')
 }
