@@ -1,14 +1,19 @@
 const webpush = require('web-push')
 
-module.exports = (res) => {
-  const [subs, keys] = res
+module.exports = (data) => {
+  const [users, keys] = data
   webpush.setVapidDetails(
     'mailto:a.lemaire@klimapartner.de',
     keys.publicKey,
     keys.privateKey
   )
-  const payload = {
-    message: 'Hello World!'
+  return Promise.allSettled(users.map(notifyUser))
+}
+
+async function notifyUser (user) {
+  const payload = JSON.stringify({ message: 'Hello World!' })
+  return {
+    user: user.email,
+    pushes: await Promise.allSettled(user.subscriptions.map(sub => webpush.sendNotification(sub, payload)))
   }
-  return Promise.all(subs.map(sub => webpush.sendNotification(sub, JSON.stringify(payload))))
 }

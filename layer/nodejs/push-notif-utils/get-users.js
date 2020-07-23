@@ -15,6 +15,5 @@ module.exports = () => {
       }
     }
   })
-    .then(res => res.body.hits.hits)
-    .then(docs => docs.flatMap(doc => doc._source.subscriptions))
+    .then(res => res.body.hits.hits.map(doc => doc._source))
 }
