@@ -4,7 +4,8 @@
   "description": "",
   "main": "serverless.yml",
   "scripts": {
-    "test": "echo \"No test script defined.\""
+    "test": "echo \"No test script defined.\"",
+    "deploy": "cp -r layer/nodejs/push-notif-utils layer/nodejs/node_modules/push-notif-utils && sls deploy -v && rm -r layer/nodejs/node_modules/push-notif-utils"
   },
   "repository": {
     "type": "git",
