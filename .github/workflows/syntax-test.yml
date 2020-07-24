@@ -28,3 +28,4 @@ jobs:
         ES_ID: ${{ secrets.ES_ID }}
         ES_SECRET: ${{ secrets.ES_SECRET }}
         ES_ENDPOINT: ${{ secrets.ES_ENDPOINT }}
+        TARGET_EVENT_BUS_ARN: ${{ secrets.TARGET_EVENT_BUS_ARN }}
