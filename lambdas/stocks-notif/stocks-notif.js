@@ -5,4 +5,7 @@ module.exports.handler = async (event) => {
     .then(sendNotifications)
     .then(getDeadNotifs)
     .then(buildEvent)
+    .then(ev => {
+      console.log(JSON.stringify(ev, null, 2))
+    })
 }
