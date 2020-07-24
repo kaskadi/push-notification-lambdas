@@ -1,5 +1,5 @@
 module.exports = userNotifs => {
-  const filterDeadEndpoint = push => push.status === 'rejected' && push.reason.statusCode === 410
+  const filterDeadEndpoint = push => push.status === 'rejected' && (push.reason.statusCode === 410 || push.reason.statusCode === 403)
   const userNotifsWithDeadEndpoints = userNotifs.filter(userNotif => userNotif.value.pushes.filter(filterDeadEndpoint).length > 0)
   return userNotifsWithDeadEndpoints.map(userNotif => {
     return {
