@@ -7,5 +7,6 @@ module.exports.handler = async (event) => {
     .then(buildEvent)
     .then(ev => {
       console.log(JSON.stringify(ev, null, 2))
+      return ev
     })
 }
