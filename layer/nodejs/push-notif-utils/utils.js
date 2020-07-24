@@ -9,6 +9,5 @@ module.exports = {
   getUsers: require('./get-users.js')(es),
   sendNotifications: require('./send-notifications.js'),
   getDeadNotifs: require('./get-dead-notifs.js'),
-  buildEvent: require('./build-event.js'),
-  deregisterSubs: require('./deregister-subs.js')(es)
+  buildEvent: require('./build-event.js')
 }
