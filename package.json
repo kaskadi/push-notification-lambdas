@@ -5,6 +5,7 @@
   "main": "serverless.yml",
   "scripts": {
     "test": "echo \"No test script defined.\"",
+    "preinstall": "bash install.sh",
     "deploy": "cp -r layer/nodejs/push-notif-utils layer/nodejs/node_modules/push-notif-utils && sls deploy -v && rm -r layer/nodejs/node_modules/push-notif-utils",
     "invoke": "aws lambda invoke --function-name stocks-notif --invocation-type Event --payload {} invoke-output.json"
   },
