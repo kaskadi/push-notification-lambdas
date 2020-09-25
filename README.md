@@ -18,8 +18,40 @@
 
 [![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/push-notification-lambdas?label=code%20quality&logo=LGTM)](https://lgtm.com/projects/g/kaskadi/push-notification-lambdas/?mode=list&logo=LGTM)
 
-:point_right: **Badges here** :point_left:
+<!-- You can add badges inside of this section if you'd like -->
 
 ****
 
-:point_down: **Your documentation here** :point_down:
+<!-- automatically generated documentation will be placed in here -->
+# Resources documentation
+
+The following lambda functions are defined in this repository:
+- [stocks-notif](#stocks-notif)
+
+The following layers are defined in this repository:
+- [push-notification-lambdas-layer](#push-notification-lambdas-layer)
+
+## stocks-notif <a name="stocks-notif"></a>
+
+|     Name     | Sources           | Timeout |                      Handler                      | Layers                                                                                | Destinations                                                                             |
+| :----------: | :---------------- | :-----: | :-----------------------------------------------: | :------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------- |
+| stocks-notif | No source defined | default | [handler](./lambdas/stocks-notif/stocks-notif.js) | <ul><li>[push-notification-lambdas-layer](#push-notification-lambdas-layer)</li></ul> | <ul><li>On success: push-notif-results _(type: Event Bridge, defined via ARN)_</li></ul> |
+
+See [configuration file](./serverless.yml) for more details.
+
+## push-notification-lambdas-layer <a name="push-notification-lambdas-layer"></a>
+
+### Description
+
+Layer for push-notification-lambdas
+
+### Dependencies
+
+- `aws-es-client`, version: `^1.0.2` ([see on NPM](https://www.npmjs.com/package/aws-es-client))
+- `web-push`, version: `^3.4.4` ([see on NPM](https://www.npmjs.com/package/web-push))
+- `push-notif-utils` (local utility)
+
+See [configuration file](./serverless.yml) for more details.
+<!-- automatically generated documentation will be placed in here -->
+
+<!-- You can customize this template as you'd like! -->
