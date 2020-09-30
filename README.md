@@ -52,6 +52,17 @@ Layer for push-notification-lambdas
 - `push-notif-utils` (local utility)
 
 See [configuration file](./serverless.yml) for more details.
+
+# Stack tags
+
+You can use any tags (and their respective values) visible below to find ressources related to this stack on AWS. See [here](https://docs.amazonaws.cn/en_us/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html) for more details.
+
+| Tag          | Value                     |
+| :----------- | :------------------------ |
+| app          | kaskadi                   |
+| service      | push-notification-lambdas |
+| logical-unit | push                      |
+| type         | eventBridge               |
 <!-- automatically generated documentation will be placed in here -->
 
 <!-- You can customize this template as you'd like! -->
