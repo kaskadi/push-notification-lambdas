@@ -35,7 +35,7 @@ The following layers are defined in this repository:
 
 |     Name     | Sources           | Timeout |                      Handler                      | Layers                                                                                | Destinations                                                                             |
 | :----------: | :---------------- | :-----: | :-----------------------------------------------: | :------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------- |
-| stocks-notif | No source defined | default | [handler](./lambdas/stocks-notif/stocks-notif.js) | <ul><li>[push-notification-lambdas-layer](#push-notification-lambdas-layer)</li></ul> | <ul><li>On success: push-notif-results _(type: Event Bridge, defined via ARN)_</li></ul> |
+| stocks-notif | No source defined | default | [handler](./lambdas/stocks-notif/stocks-notif.js) | <ul><li>[push-notification-lambdas-layer](#push-notification-lambdas-layer)</li></ul> | <ul><li>On success: push-notif-results _(type: event bridge, defined via ARN)_</li></ul> |
 
 See [configuration file](./serverless.yml) for more details.
 
