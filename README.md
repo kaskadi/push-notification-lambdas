@@ -47,8 +47,8 @@ Layer for push-notification-lambdas
 
 ### Dependencies
 
-- `aws-es-client`, version: `^1.0.2` ([see on NPM](https://www.npmjs.com/package/aws-es-client))
-- `web-push`, version: `^3.4.4` ([see on NPM](https://www.npmjs.com/package/web-push))
+- `aws-es-client`, version: `1.0.2` ([see on NPM](https://www.npmjs.com/package/aws-es-client))
+- `web-push`, version: `3.4.4` ([see on NPM](https://www.npmjs.com/package/web-push))
 - `push-notif-utils` (local utility)
 
 See [configuration file](./serverless.yml) for more details.
