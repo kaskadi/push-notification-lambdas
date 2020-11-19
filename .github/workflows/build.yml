@@ -7,14 +7,18 @@ on:
       - 'dev'
     types: [opened, reopened, edited, synchronize]
     paths:
+      - 'serverless.yml'
       - 'layer/**'
       - 'lambdas/**'
       - 'test/**'
       - 'package.json'
 env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY_SECRET }}
   ES_ID: ${{ secrets.ES_ID }}
   ES_SECRET: ${{ secrets.ES_SECRET }}
   ES_ENDPOINT: ${{ secrets.ES_ENDPOINT }}
+  TARGET_EVENT_BUS_ARN: ${{ secrets.EB_PUSH_NOTIFS_RESULTS_BUS_ARN }}
 jobs:
   # scan code using CodeQL
   analyze:
@@ -36,6 +40,16 @@ jobs:
       uses: github/codeql-action/autobuild@v1
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm i
+    - name: serverless syntax check
+      uses: serverless/github-action@master
+      with:
+        args: deploy --noDeploy
   build:
     runs-on: ubuntu-latest
     steps:
